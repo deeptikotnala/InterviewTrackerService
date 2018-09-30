@@ -35,16 +35,19 @@ public class InterviewTrackerService {
         return interviewStatusRepo.getInterviewStatuses();
     }
 
-    public List<ApplicantDetails> getApplicantDetails(String applicantId) {
-        return applicantDetailsRepo.getApplicantDetails(applicantId);
+    public List<ApplicantDetails> getApplicantDetailsById(String applicantId) {
+        return applicantDetailsRepo.getApplicantDetailsById(applicantId);
     }
 
-    public List<InterviewDetails> getInterviewDetails(String intId) {
-
-        return interviewDetailsRepo.getInterviewDetails(intId);
+    public List<InterviewDetails> getInterviewDetailsById(String intId) {
+        return interviewDetailsRepo.getInterviewDetailsById(intId);
     }
 
-    public List<JobDetails> getJobDetails(String jobId) {
-        return jobDetailsRepo.getJobDetails(jobId);
+    public List<JobDetails> getJobDetailsById(String jobId) {
+        return jobDetailsRepo.getJobDetailsById(jobId);
+    }
+
+    public List<JobDetails> getJobDetails() {
+        return jobDetailsRepo.getJobDetails();
     }
 }

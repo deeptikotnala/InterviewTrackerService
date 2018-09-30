@@ -9,8 +9,8 @@ import java.util.List;
 
 
 public interface ApplicantDetailsRepo extends Repository<ApplicantDetails, Integer> {
-    String getApplicantDetails = "SELECT * FROM applicant_details WHERE ID = ?1";
+    String getApplicantDetailsById = "SELECT * FROM applicant_details WHERE ID = ?1";
 
-    @Query(nativeQuery = true, value = getApplicantDetails)
-    List<ApplicantDetails> getApplicantDetails(String applicationId);
+    @Query(nativeQuery = true, value = getApplicantDetailsById)
+    List<ApplicantDetails> getApplicantDetailsById(String applicationId);
 }

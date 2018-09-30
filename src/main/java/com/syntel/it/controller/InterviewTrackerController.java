@@ -18,7 +18,7 @@ import java.util.List;
 
 @Controller
 @Slf4j
-public class ApplicationController {
+public class InterviewTrackerController {
 
     @Autowired
     private InterviewTrackerService interviewTrackerService;
@@ -29,23 +29,27 @@ public class ApplicationController {
         return ResponseEntity.ok(interviewStatusList);
     }
     @RequestMapping(value = "/getApplicantDetails/{applicantId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<?> getApplicantDetails(@PathVariable("applicantId") String applicantId) {
-        List<ApplicantDetails> interviewStatusList = interviewTrackerService.getApplicantDetails(applicantId);
-        return ResponseEntity.ok(interviewStatusList);
+    public ResponseEntity<?> getApplicantDetailsById(@PathVariable("applicantId") String applicantId) {
+        List<ApplicantDetails> applicants = interviewTrackerService.getApplicantDetailsById(applicantId);
+        return ResponseEntity.ok(applicants);
     }
 
     @RequestMapping(value = "/getInterviewDetails/{intId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<?> getInterviewDetails(@PathVariable("intId") String intId) {
-        List<InterviewDetails> interviewStatusList = interviewTrackerService.getInterviewDetails(intId);
-        return ResponseEntity.ok(interviewStatusList);
+    public ResponseEntity<?> getInterviewDetailsByIntId(@PathVariable("intId") String intId) {
+        List<InterviewDetails> interviewDetails = interviewTrackerService.getInterviewDetailsById(intId);
+        return ResponseEntity.ok(interviewDetails);
     }
 
     @RequestMapping(value = "/getJobDetails/{jobId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<?> getJobDetails(@PathVariable("jobId") String jobId) {
-        List<JobDetails> interviewStatusList = interviewTrackerService.getJobDetails(jobId);
-        return ResponseEntity.ok(interviewStatusList);
+    public ResponseEntity<?> getJobDetailsById(@PathVariable("jobId") String jobId) {
+        List<JobDetails> jobDetails = interviewTrackerService.getJobDetailsById(jobId);
+        return ResponseEntity.ok(jobDetails);
     }
 
-
+    @RequestMapping(value = "/getJobDetails", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<?> getJobDetails() {
+        List<JobDetails> jobDetails = interviewTrackerService.getJobDetails();
+        return ResponseEntity.ok(jobDetails);
+    }
 
 }
