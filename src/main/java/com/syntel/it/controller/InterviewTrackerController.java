@@ -40,6 +40,14 @@ public class InterviewTrackerController {
         return ResponseEntity.ok(interviewDetails);
     }
 
+    @RequestMapping(value = "/getInterviewDetails", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<?> getInterviewDetails() {
+        List<InterviewDetails> interviewDetails = interviewTrackerService.getInterviewDetails();
+        return ResponseEntity.ok(interviewDetails);
+    }
+
+
+
     @RequestMapping(value = "/getJobDetails/{jobId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<?> getJobDetailsById(@PathVariable("jobId") String jobId) {
         List<JobDetails> jobDetails = interviewTrackerService.getJobDetailsById(jobId);

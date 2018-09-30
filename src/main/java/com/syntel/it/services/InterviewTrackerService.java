@@ -42,6 +42,9 @@ public class InterviewTrackerService {
     public List<InterviewDetails> getInterviewDetailsById(String intId) {
         return interviewDetailsRepo.getInterviewDetailsById(intId);
     }
+    public List<InterviewDetails> getInterviewDetails() {
+        return interviewDetailsRepo.getInterviewDetails();
+    }
 
     public List<JobDetails> getJobDetailsById(String jobId) {
         return jobDetailsRepo.getJobDetailsById(jobId);
