@@ -53,4 +53,9 @@ public class InterviewTrackerService {
     public List<JobDetails> getJobDetails() {
         return jobDetailsRepo.getJobDetails();
     }
+
+    public void addNewApplication(ApplicantDetails applicantDetails) {
+        applicantDetails.setActiveFlag(1);
+        applicantDetailsRepo.save(applicantDetails);
+    }
 }

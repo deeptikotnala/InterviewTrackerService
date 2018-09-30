@@ -5,11 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity
+@Entity(name="APPLICANT_DETAILS")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,6 +16,7 @@ public class ApplicantDetails {
 
     @Id
     @Column(name = "ID")
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "FIRST_NAME")
@@ -33,7 +32,7 @@ public class ApplicantDetails {
     private String skills;
 
     @Column(name = "JOB_DETAIL_ID")
-    private int interviewResult;
+    private int jobDetailId;
 
     @Column(name = "SPONSORSHIP_REQ")
     private int sponsorshipReq;
