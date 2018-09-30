@@ -15,21 +15,23 @@ import java.sql.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class InterviewDetails {
-
+public class InterviewDetailsResponse {
 
     @Id
     @Column(name = "ID")
     private Integer id;
 
-    @Column(name = "JOB_ID")
-    private Integer jobId;
+    @Column(name = "First_Name")
+    private String firstName;
 
-    @Column(name = "INT_TYPE_ID")
-    private Integer intTypeId;
+    @Column(name = "LAST_NAME")
+    private String lastName;
 
-    @Column(name = "INT_RESULT_ID")
-    private Integer intResultId;
+    @Column(name = "SKILLS")
+    private String skills;
+
+    @Column(name = "INT_RSLT")
+    private String status;
 
     @Column(name = "INT_DATETIME")
     private Date intDateTime;
@@ -42,6 +44,5 @@ public class InterviewDetails {
 
     @Column(name = "EVALUATOR_COMMENTS")
     private String evaluatorComment;
-
-
 }
+

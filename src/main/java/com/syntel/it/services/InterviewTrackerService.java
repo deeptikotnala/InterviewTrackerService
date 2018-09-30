@@ -1,13 +1,7 @@
 package com.syntel.it.services;
 
-import com.syntel.it.entities.ApplicantDetails;
-import com.syntel.it.entities.InterviewStatus;
-import com.syntel.it.entities.InterviewDetails;
-import com.syntel.it.entities.JobDetails;
-import com.syntel.it.repositories.ApplicantDetailsRepo;
-import com.syntel.it.repositories.InterviewDetailsRepo;
-import com.syntel.it.repositories.InterviewStatusRepo;
-import com.syntel.it.repositories.JobDetailsRepo;
+import com.syntel.it.entities.*;
+import com.syntel.it.repositories.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +17,9 @@ public class InterviewTrackerService {
 
     @Autowired
     private ApplicantDetailsRepo applicantDetailsRepo;
+
+    @Autowired
+    private InterviewDetailsResponseRepo interviewDetailsResponseRepo;
 
     @Autowired
     private InterviewDetailsRepo interviewDetailsRepo;
@@ -42,8 +39,8 @@ public class InterviewTrackerService {
     public List<InterviewDetails> getInterviewDetailsById(String intId) {
         return interviewDetailsRepo.getInterviewDetailsById(intId);
     }
-    public List<InterviewDetails> getInterviewDetails() {
-        return interviewDetailsRepo.getInterviewDetails();
+    public List<InterviewDetailsResponse> getInterviewDetails() {
+        return interviewDetailsResponseRepo.getInterviewDetails();
     }
 
     public List<JobDetails> getJobDetailsById(String jobId) {

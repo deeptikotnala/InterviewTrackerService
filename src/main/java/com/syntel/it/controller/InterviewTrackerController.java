@@ -1,9 +1,6 @@
 package com.syntel.it.controller;
 
-import com.syntel.it.entities.ApplicantDetails;
-import com.syntel.it.entities.InterviewDetails;
-import com.syntel.it.entities.InterviewStatus;
-import com.syntel.it.entities.JobDetails;
+import com.syntel.it.entities.*;
 import com.syntel.it.services.InterviewTrackerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +39,7 @@ public class InterviewTrackerController {
 
     @RequestMapping(value = "/getInterviewDetails", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<?> getInterviewDetails() {
-        List<InterviewDetails> interviewDetails = interviewTrackerService.getInterviewDetails();
+        List<InterviewDetailsResponse> interviewDetails = interviewTrackerService.getInterviewDetails();
         return ResponseEntity.ok(interviewDetails);
     }
 
