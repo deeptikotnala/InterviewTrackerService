@@ -46,6 +46,11 @@ CREATE TABLE `applicant_details` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `applicant_details`
+--
+
+
+--
 -- Table structure for table `career_level`
 --
 
@@ -112,6 +117,7 @@ CREATE TABLE `interview_details` (
   `EVALUATOR_NAME` varchar(65) DEFAULT NULL,
   `EVALUATOR_COMMENTS` varchar(500) DEFAULT NULL,
   `CREATED_DATE` datetime DEFAULT CURRENT_TIMESTAMP,
+  `EVALUATOR_EMAIL_ID` varchar(65) DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `JOB_ID_FK_idx` (`JOB_ID`),
   KEY `APPLICANT_ID_FK_idx` (`APPLICANT_ID`),
@@ -123,19 +129,6 @@ CREATE TABLE `interview_details` (
   CONSTRAINT `JOB_ID_FK` FOREIGN KEY (`JOB_ID`) REFERENCES `job_details` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `interview_details`
---
-
-LOCK TABLES `interview_details` WRITE;
-/*!40000 ALTER TABLE `interview_details` DISABLE KEYS */;
-/*!40000 ALTER TABLE `interview_details` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `interview_rslt`
---
 
 DROP TABLE IF EXISTS `interview_rslt`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -199,4 +192,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-30 20:10:59
+-- Dump completed on 2018-10-01  1:21:18

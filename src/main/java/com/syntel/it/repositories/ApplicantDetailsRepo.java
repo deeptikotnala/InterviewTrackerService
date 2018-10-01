@@ -1,7 +1,6 @@
 package com.syntel.it.repositories;
 
 import com.syntel.it.entities.ApplicantDetails;
-import com.syntel.it.entities.InterviewStatus;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 
