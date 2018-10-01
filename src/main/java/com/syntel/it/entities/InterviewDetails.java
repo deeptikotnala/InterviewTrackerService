@@ -5,12 +5,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 
-@Entity
+@Entity(name="interview_details")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,10 +18,17 @@ public class InterviewDetails {
 
     @Id
     @Column(name = "ID")
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "JOB_ID")
     private Integer jobId;
+
+    @Column(name = "EMAIL_ID")
+    private String emailId;
+
+    @Column(name = "APPLICANT_ID")
+    private Integer applicantId;
 
     @Column(name = "INT_TYPE_ID")
     private Integer intTypeId;

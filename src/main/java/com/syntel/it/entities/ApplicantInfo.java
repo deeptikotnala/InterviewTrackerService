@@ -33,4 +33,7 @@ public class ApplicantInfo {
     @Column(name = "PHONE_NO")
     private String phoneNo;
 
+    @Column(name = "JOB_DETAIL_ID")
+    private String jobDetailId;
+
 }

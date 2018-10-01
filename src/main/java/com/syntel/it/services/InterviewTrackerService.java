@@ -60,6 +60,10 @@ public class InterviewTrackerService {
         applicantDetailsRepo.save(applicantDetails);
     }
 
+    public void addNewInterview(InterviewDetails interviewDetails) {
+        interviewDetailsRepo.save(interviewDetails);
+    }
+
     public List<ApplicantInfo> getLastTenApplications(){
         return applicantInfoRepo.getApplicantLastTenRecords();
     }

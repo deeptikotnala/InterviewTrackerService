@@ -13,6 +13,7 @@ public interface ApplicantInfoRepo extends Repository<ApplicantInfo, Integer> {
                     "A.LAST_NAME,  " +
                     "A.EMAIL_ID, " +
                     "A.PHONE_NO, " +
+                    "A.JOB_DETAIL_ID, " +
                     "B.JOB_TYPE AS POSITION " +
                     "FROM APPLICANT_DETAILS A " +
                     "JOIN JOB_DETAILS B ON A.JOB_DETAIL_ID = B.ID " +
@@ -26,6 +27,7 @@ public interface ApplicantInfoRepo extends Repository<ApplicantInfo, Integer> {
                     "A.LAST_NAME,  " +
                     "A.EMAIL_ID, " +
                     "A.PHONE_NO, " +
+                    "A.JOB_DETAIL_ID, " +
                     "B.JOB_TYPE AS POSITION " +
                     "FROM APPLICANT_DETAILS A " +
                     "JOIN JOB_DETAILS B ON A.JOB_DETAIL_ID = B.ID " +

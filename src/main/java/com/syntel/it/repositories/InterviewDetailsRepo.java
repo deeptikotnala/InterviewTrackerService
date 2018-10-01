@@ -18,4 +18,6 @@ public interface InterviewDetailsRepo extends Repository<InterviewDetails, Integ
 
     @Query(nativeQuery = true, value = getInterviewDetails)
     List<InterviewDetails> getInterviewDetails();
+
+    <S extends InterviewDetails> S save(S entity);
 }
