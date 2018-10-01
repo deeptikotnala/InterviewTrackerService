@@ -46,6 +46,16 @@ CREATE TABLE `applicant_details` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `applicant_details`
+--
+
+LOCK TABLES `applicant_details` WRITE;
+/*!40000 ALTER TABLE `applicant_details` DISABLE KEYS */;
+INSERT INTO `applicant_details` VALUES (13,'Deepti','Kotnala','1988-02-06','deepti.kotnala@gmail.com','3313079039','Java',1,1,1,0,NULL,NULL,'2018-09-30 22:44:54');
+/*!40000 ALTER TABLE `applicant_details` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `career_level`
 --
 
@@ -112,6 +122,7 @@ CREATE TABLE `interview_details` (
   `EVALUATOR_NAME` varchar(65) DEFAULT NULL,
   `EVALUATOR_COMMENTS` varchar(500) DEFAULT NULL,
   `CREATED_DATE` datetime DEFAULT CURRENT_TIMESTAMP,
+  `EVALUATOR_EMAIL_ID` varchar(65) DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `JOB_ID_FK_idx` (`JOB_ID`),
   KEY `APPLICANT_ID_FK_idx` (`APPLICANT_ID`),
@@ -130,6 +141,7 @@ CREATE TABLE `interview_details` (
 
 LOCK TABLES `interview_details` WRITE;
 /*!40000 ALTER TABLE `interview_details` DISABLE KEYS */;
+INSERT INTO `interview_details` VALUES (1,1,13,1,1,'2018-01-01 00:00:00','EST','Vivek','Good','2018-09-09 00:00:00','abc@gmail.com'),(2,1,13,2,1,'2018-01-01 00:00:00','EST','Vivaan','Good','2018-02-02 00:00:00','abc@gmail.com');
 /*!40000 ALTER TABLE `interview_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,4 +211,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-30 20:10:59
+-- Dump completed on 2018-10-01  1:21:18
