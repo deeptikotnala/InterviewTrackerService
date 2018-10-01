@@ -49,11 +49,6 @@ CREATE TABLE `applicant_details` (
 -- Dumping data for table `applicant_details`
 --
 
-LOCK TABLES `applicant_details` WRITE;
-/*!40000 ALTER TABLE `applicant_details` DISABLE KEYS */;
-INSERT INTO `applicant_details` VALUES (13,'Deepti','Kotnala','1988-02-06','deepti.kotnala@gmail.com','3313079039','Java',1,1,1,0,NULL,NULL,'2018-09-30 22:44:54');
-/*!40000 ALTER TABLE `applicant_details` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `career_level`
@@ -134,20 +129,6 @@ CREATE TABLE `interview_details` (
   CONSTRAINT `JOB_ID_FK` FOREIGN KEY (`JOB_ID`) REFERENCES `job_details` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `interview_details`
---
-
-LOCK TABLES `interview_details` WRITE;
-/*!40000 ALTER TABLE `interview_details` DISABLE KEYS */;
-INSERT INTO `interview_details` VALUES (1,1,13,1,1,'2018-01-01 00:00:00','EST','Vivek','Good','2018-09-09 00:00:00','abc@gmail.com'),(2,1,13,2,1,'2018-01-01 00:00:00','EST','Vivaan','Good','2018-02-02 00:00:00','abc@gmail.com');
-/*!40000 ALTER TABLE `interview_details` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `interview_rslt`
---
 
 DROP TABLE IF EXISTS `interview_rslt`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
