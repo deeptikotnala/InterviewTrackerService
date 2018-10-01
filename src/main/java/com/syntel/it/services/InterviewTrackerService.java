@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 
 @Slf4j
@@ -26,6 +27,9 @@ public class InterviewTrackerService {
 
     @Autowired
     private JobDetailsRepo jobDetailsRepo;
+
+    @Autowired
+    private ApplicantInfoRepo applicantInfoRepo;
 
 
     public List<InterviewStatus> getInterviewStatuses() {
@@ -54,5 +58,13 @@ public class InterviewTrackerService {
     public void addNewApplication(ApplicantDetails applicantDetails) {
         applicantDetails.setActiveFlag(1);
         applicantDetailsRepo.save(applicantDetails);
+    }
+
+    public List<ApplicantInfo> getLastTenApplications(){
+        return applicantInfoRepo.getApplicantLastTenRecords();
+    }
+
+    public List<ApplicantInfo> getAllApplications(){
+        return applicantInfoRepo.getAllApplications();
     }
 }

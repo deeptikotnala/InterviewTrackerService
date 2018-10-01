@@ -45,8 +45,6 @@ public class InterviewTrackerController {
         return ResponseEntity.ok(interviewDetails);
     }
 
-
-
     @RequestMapping(value = "/getJobDetails/{jobId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<?> getJobDetailsById(@PathVariable("jobId") String jobId) {
         List<JobDetails> jobDetails = interviewTrackerService.getJobDetailsById(jobId);
@@ -63,5 +61,17 @@ public class InterviewTrackerController {
     public ResponseEntity addNewApplication(@RequestBody ApplicantDetails applicantDetails) {
         interviewTrackerService.addNewApplication(applicantDetails);
         return ResponseEntity.status(HttpStatus.OK).body(1);
+    }
+
+    @RequestMapping(value = "/getLastApplications", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<?> getLastTenApplications(){
+        List<ApplicantInfo> applicantInfos = interviewTrackerService.getLastTenApplications();
+        return ResponseEntity.ok(applicantInfos);
+    }
+
+    @RequestMapping(value = "/getAllApplications", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<?> getAllApplications(){
+        List<ApplicantInfo> applicantInfos = interviewTrackerService.getAllApplications();
+        return ResponseEntity.ok(applicantInfos);
     }
 }

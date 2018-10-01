@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity(name="APPLICANT_DETAILS")
 @Data
@@ -28,6 +29,12 @@ public class ApplicantDetails {
     @Column(name = "DOB")
     private String dob;
 
+    @Column(name = "EMAIL_ID")
+    private String emailId;
+
+    @Column(name="PHONE_NO")
+    private String phoneNo;
+
     @Column(name = "SKILLS")
     private String skills;
 
@@ -45,6 +52,5 @@ public class ApplicantDetails {
 
     @Column(name = "OVERALL_STATUS")
     private String overallStatus;
-
 
 }
