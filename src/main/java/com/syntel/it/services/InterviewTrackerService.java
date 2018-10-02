@@ -37,6 +37,9 @@ public class InterviewTrackerService {
     @Autowired
     private InterviewResultsRepo interviewResultsRepo;
 
+    @Autowired
+    private InterviewSummaryRepo interviewSummaryRepo;
+
 
     public List<InterviewStatus> getInterviewStatuses() {
         return interviewStatusRepo.getInterviewStatuses();
@@ -51,6 +54,10 @@ public class InterviewTrackerService {
     }
     public List<InterviewDetailsResponse> getInterviewDetails() {
         return interviewDetailsResponseRepo.getInterviewDetails();
+    }
+
+    public List<InterviewSummary> getInterviewSummary(String intId) {
+        return interviewSummaryRepo.getInterviewSumary(intId);
     }
 
     public List<JobDetails> getJobDetailsById(String jobId) {
