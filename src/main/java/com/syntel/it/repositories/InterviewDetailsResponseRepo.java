@@ -8,9 +8,28 @@ import java.util.List;
 
 
 public interface InterviewDetailsResponseRepo extends Repository<InterviewDetailsResponse, Integer> {
-    String getInterviewDetails = "select b.id,a.first_Name,a.last_name ,a.skills ,b.evaluator_name,b.evaluator_comments,b.int_datetime ,b.timezone,c.job_type ,d.INT_RSLT \n" +
-            "from applicant_details a , interview_details b ,job_details c , interview_rslt d\n" +
-            "where a.id=b.applicant_id and c.id=b.job_id and b.int_result_id=d.id";
+    String getInterviewDetails = 
+            "SELECT " +
+                    "    B.ID, " +
+                    "    A.FIRST_NAME, " +
+                    "    A.LAST_NAME, " +
+                    "    A.SKILLS, " +
+                    "    B.EVALUATOR_NAME, " +
+                    "    B.EVALUATOR_COMMENTS, " +
+                    "    B.INT_DATETIME, " +
+                    "    B.TIMEZONE, " +
+                    "    C.JOB_TYPE, " +
+                    "    D.INT_RSLT " +
+                    "FROM " +
+                    "    APPLICANT_DETAILS A, " +
+                    "    INTERVIEW_DETAILS B, " +
+                    "    JOB_DETAILS C, " +
+                    "    INTERVIEW_RSLT D " +
+                    "WHERE " +
+                    "    A.ID = B.APPLICANT_ID " +
+                    "        AND C.ID = B.JOB_ID " +
+                    "        AND B.INT_RESULT_ID = D.ID " +
+                    "ORDER BY B.CREATED_DATE DESC ";
 
     @Query(nativeQuery = true, value = getInterviewDetails)
     List<InterviewDetailsResponse> getInterviewDetails();
