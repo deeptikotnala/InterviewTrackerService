@@ -75,6 +75,12 @@ public class InterviewTrackerController {
         return ResponseEntity.status(HttpStatus.OK).body(1);
     }
 
+    @RequestMapping(value = "/updateInterview", method = RequestMethod.POST)
+    public ResponseEntity updateInterview(@RequestBody InterviewDetails interviewDetails) {
+        interviewTrackerService.updateInterview(interviewDetails);
+        return ResponseEntity.status(HttpStatus.OK).body(1);
+    }
+
     @RequestMapping(value = "/getLastApplications", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<?> getLastTenApplications(){
         List<ApplicantInfo> applicantInfos = interviewTrackerService.getLastTenApplications();
