@@ -41,6 +41,7 @@ public class InterviewTrackerService {
     private InterviewSummaryRepo interviewSummaryRepo;
 
 
+
     public List<InterviewStatus> getInterviewStatuses() {
         return interviewStatusRepo.getInterviewStatuses();
     }
@@ -75,6 +76,10 @@ public class InterviewTrackerService {
 
     public void addNewInterview(InterviewDetails interviewDetails) {
         interviewDetailsRepo.save(interviewDetails);
+    }
+
+    public void updateInterview(InterviewDetails interviewDetails) {
+        interviewDetailsRepo.updateInterviewDetailsById(interviewDetails.getEvaluatorComment(),interviewDetails.getIntResultId(),interviewDetails.getId());
     }
 
     public List<ApplicantInfo> getLastTenApplications(){
